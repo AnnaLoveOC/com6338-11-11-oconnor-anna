@@ -13,22 +13,42 @@
         <!-- Game Title -->
         <h1>Just One More Revision!</h1>
 
-        <!-- Stress Meter -->
-        <p id="stress">Stress: 20/100</p>
+        <!-- Game Introduction -->
+        <section id="intro">
+            <h2>Welcome to Your Worst Client Nightmare!</h2>
+            <p>You're a freelance graphic designer with one final logo project to finish. Unfortunately, your client Madison has a LOT of opinions. Make your choices carefully, manage your stress, and try to survive the workday without burning out!</p>
+            <button id="start">Start Game</button>
+        </section>
 
         <!-- Current Scene -->
-        <section id="game">
+        <section id="game" hidden>
+
+            <p id="stress">Stress: 20/100</p>
+
             <h2 id="scene-title"></h2>
+            <p id="scene-time"></p>
+
+            <!-- Client Email -->
             <p id="email"></p>
+
+            <!-- Player Question -->
+            <p id="question"></p>
 
             <!-- Player Choices -->
             <div id="choices"></div>
+            
+        </section>
+
+        <!-- Game Ending -->
+        <section id="ending" hidden>
+            <h2 id="ending-title"></h2>
+            <p id="ending-text"></p>
         </section>
 
         <!-- Restart Button -->
         <button id="restart" hidden>Restart Game</button>
     </main>
 
-    <script src="script.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
