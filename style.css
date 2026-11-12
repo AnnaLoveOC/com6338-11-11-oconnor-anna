@@ -16,8 +16,8 @@
     --email-eyebrow-text: #9b6574;
     --window-titlebar-background: #efe8eb;
     --window-titlebar-border: #afa3a8;
-    
 }
+
 
 /* ========================================
    GENERAL STYLING
@@ -34,6 +34,7 @@ body {
     font-family: "Inter", sans-serif;
 }
 
+
 /* ========================================
    MAIN GAME WINDOW
 ======================================== */
@@ -47,6 +48,7 @@ main {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     overflow: hidden;
 }
+
 
 /* ========================================
    MAC WINDOW TITLE BAR
@@ -62,12 +64,12 @@ main {
     border-bottom: 1px solid var(--window-titlebar-border);
 }
 
+/* Window Controls */
+
 .window-controls {
     display: flex;
     gap: 8px;
 }
-
-/* Mac Window Dots */
 
 .window-dot {
     display: inline-block;
@@ -101,6 +103,7 @@ main {
     line-height: 20px;
 }
 
+
 /* ========================================
    INNER WINDOW CONTENT
 ======================================== */
@@ -117,33 +120,9 @@ main {
     border-radius: 12px;
 }
 
-/* ========================================
-   INTRODUCTION SCREEN
-======================================== */
-
-#intro h2 {
-    margin: 0;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 36px;
-    color: var(--email-heading-text)
-}
-
-#intro h3 {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 28px;
-    color: var(--email-heading-text)
-}
-
-#intro p {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-}
 
 /* ========================================
-   ACTION CONTAINERS
+   SHARED ACTION CONTAINERS
 ======================================== */
 
 .action-container {
@@ -152,9 +131,7 @@ main {
     border-radius: 12px;
 }
 
-/* ========================================
-   ACTION CONTAINER TEXT
-======================================== */
+/* Action Container Text */
 
 .action-container p {
     margin: 0 0 16px;
@@ -164,14 +141,6 @@ main {
     line-height: 28px;
 }
 
-/* Intro Question */
-#intro .action-container p {
-    color: var(--email-heading-text);
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 24px;
-    margin: 0 0 16px;
-}
 
 /* ========================================
    SHARED BUTTON STYLING
@@ -195,75 +164,63 @@ main {
     opacity: 0.85;
 }
 
-/* ========================================
-   GAME CHOICE BUTTONS
-======================================== */
-
-#choices {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-#choices .game-button {
-    width: 100%;
-    min-height: 48px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    text-align: left;
-}
 
 /* ========================================
-   EMAIL SCENE TITLE
+   INTRODUCTION SCREEN
 ======================================== */
 
-#scene-title {
-    margin: 0 0 8px;
-    color: var(--email-heading-text);
-    font-size: 24px;
-    line-height: 32px;
-}
+/* Main Heading */
 
-/* ========================================
-   EMAIL DIVIDERS
-======================================== */
-
-.email-divider {
-    border: none;
-    border-top: 1px solid var(--email-line-divider);
-    margin: 24px 0;
-}
-
-/* ========================================
-   EMAIL METADATA
-======================================== */
-
-.email-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-}
-
-.email-meta p {
+#intro h2 {
     margin: 0;
+    color: var(--email-heading-text);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+/* How to Play Heading */
+
+#intro h3 {
+    color: var(--email-heading-text);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+/* Intro Paragraphs */
+
+#intro p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+/* Intro Description */
+
+#intro #intro-description {
     color: var(--email-meta-text);
     font-size: 14px;
+    font-weight: 400;
     line-height: 20px;
 }
 
-#email-sender {
-    font-weight: 400;
+/* Intro Question */
+
+#intro .action-container p {
+    margin: 0 0 16px;
+    color: var(--email-heading-text);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
 }
 
-#email-sender strong {
-    font-weight: 600;
-}
 
 /* ========================================
-   STRESS METER
+   GAME SCREEN
 ======================================== */
+
+/* Stress Meter */
 
 #stress-meter {
     display: flex;
@@ -292,9 +249,48 @@ main {
     border-radius: inherit;
 }
 
-/* ========================================
-   EMAIL BODY
-======================================== */
+/* Email Scene Title */
+
+#scene-title {
+    margin: 0 0 8px;
+    color: var(--email-heading-text);
+    font-size: 24px;
+    line-height: 32px;
+}
+
+/* Email Metadata */
+
+.email-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.email-meta p {
+    margin: 0;
+    color: var(--email-meta-text);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#email-sender {
+    font-weight: 400;
+}
+
+#email-sender strong {
+    font-weight: 600;
+}
+
+/* Email Divider */
+
+.email-divider {
+    border: none;
+    border-top: 1px solid var(--email-line-divider);
+    margin: 24px 0;
+}
+
+/* Email Body */
 
 #email {
     margin: 0;
@@ -304,34 +300,35 @@ main {
     white-space: pre-line;
 }
 
-/* ========================================
-   GAME ACTION CONTAINER SPACING
-======================================== */
+/* Game Question Container */
 
 #game .action-container {
     margin-top: 24px;
 }
 
-/* ========================================
-   GAME ENDING
-======================================== */
+/* Game Choice Buttons */
 
-#ending-title {
-    margin: 0 0 16px;
-    color: var(--email-heading-text);
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32px;
+#choices {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-#ending-text {
-    font-weight: 400;
-    line-height: 24px;
+#choices .game-button {
+    width: 100%;
+    min-height: 48px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
 }
 
+
 /* ========================================
-   ENDING LABEL
+   GAME ENDING SCREEN
 ======================================== */
+
+/* Ending Label */
 
 #ending-label {
     margin: 0 0 12px;
@@ -341,6 +338,24 @@ main {
     line-height: 16px;
     letter-spacing: 1px;
 }
+
+/* Ending Title */
+
+#ending-title {
+    margin: 0 0 16px;
+    color: var(--email-heading-text);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+/* Ending Description */
+
+#ending-text {
+    font-weight: 400;
+    line-height: 24px;
+}
+
 
 /* ========================================
    COMIC SANS CHAOS

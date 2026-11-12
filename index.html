@@ -32,7 +32,7 @@
             <div class="window-content">
 
                 <h2>Welcome to Your Worst Client Nightmare!</h2>
-                <p>
+                <p id="intro-description">
                     You're a freelance graphic designer with one final logo
                     project to finish. Unfortunately, your client Madison
                     has a LOT of opinions.
@@ -51,11 +51,10 @@
                 <!-- Introduction Action Box -->
                 <div class="action-container">
                     <p>Ready to face your most demanding client yet?</p>
-                    <button class="game-button"  id="start">Start Game</button>
+                    <button class="game-button" id="start">Start Game</button>
                 </div>
             
             </div>
-
 
         </section>
 
@@ -116,9 +115,10 @@
                 <!-- Completion Label -->
                 <p id="ending-label"></p>
 
-                <div class="action-container">
+                <h2 id="ending-title"></h2>
 
-                    <h2 id="ending-title"></h2>
+                <div class="action-container">
+                    
                     <p id="ending-text"></p>
                 
                     <!-- Restart Button -->
@@ -133,5 +133,6 @@
     </main>
 
     <script src="index.js"></script>
+    
 </body>
 </html>

@@ -120,6 +120,7 @@ const scenesArr = [
         id: "comicSansBonus",
 
         title: "The Comic Sans Catastrophe",
+        time: "10:47 AM",
         email: "OMG!!! I LOVE THIS FONT!!! It's PERFECT! Can we also add rainbows, sparkles, and maybe a little butterfly?!",
 
         question: "Do you embrace the chaos or try to save the design?",
@@ -333,7 +334,7 @@ function updateStress() {
     stressDisplay.textContent = `${stress}/100`
 
     // Update the stress bar width
-    document.querySelector("#stress-fill").style.width = `${stress}%`
+    document.querySelector("#stress-fill").style.width = `${Math.min(stress, 100)}%`
 }
 
 // FUNCTION: Display the current scene and its available choices
@@ -376,28 +377,8 @@ function displayScene() {
 
 }
 
-// FUNCTION: Process the player's choice and determine what happens next
-function handleChoice(choiceIndex) {
-
-    // Find the current scene and selected choice
-    const scene = scenesArr.find(item => item.id === currentScene)
-    const choice = scene.choices[choiceIndex]
-
-    // Update stress based on the selected choice
-    stress += choice.stressChange || 0
-
-    // Prevent stress from dropping below zero
-    if (stress < 0) {
-        stress = 0
-    }
-
-    updateStress()
-
-    // Trigger burnout if stress reaches 100
-    if (stress >= 100) {
-        showEnding("burnout")
-        return
-    }
+// FUNCTION: Track special choices that affect the game
+function trackSpecialChoices(choiceIndex, choice) {
 
     // Track whether the player chooses Comic Sans
     if (choice.nextScene === "comicSansBonus") {
@@ -415,6 +396,38 @@ function handleChoice(choiceIndex) {
     if (currentScene === "scene3" && choiceIndex === 0) {
         chaoticLogo = true
     }
+
+}
+
+// FUNCTION: Process the player's choice and determine what happens next
+function handleChoice(choiceIndex) {
+
+    // Find the current scene and selected choice
+    const scene = scenesArr.find(item => item.id === currentScene)
+    const choice = scene.choices[choiceIndex]
+
+    // Update stress based on the selected choice
+    stress += choice.stressChange || 0
+
+    // Keep stress between 0 and 100
+    if (stress < 0) {
+        stress = 0
+    }
+
+    if (stress > 100) {
+        stress = 100
+    }
+
+    updateStress()
+
+    // Trigger burnout if stress reaches 100
+    if (stress >= 100) {
+        showEnding("burnout")
+        return
+    }
+
+    // Track special choices
+    trackSpecialChoices(choiceIndex, choice)
 
     // Show the selected ending after Scene 5
     if (currentScene === "scene5") {
