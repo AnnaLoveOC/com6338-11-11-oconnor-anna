@@ -355,6 +355,7 @@ function displayScene() {
 
         // Create and display the choice button
         const choiceButton = document.createElement("button")
+        choiceButton.classList.add("game-button")
         choiceButton.innerText = scene.choices[i].text
         choicesContainer.appendChild(choiceButton)
 

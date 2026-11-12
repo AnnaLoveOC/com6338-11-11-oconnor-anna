@@ -10,32 +10,87 @@
 <body>
 
     <main>
-        <!-- Game Title -->
-        <h1>Just One More Revision!</h1>
+        
+        <div id="window-titlebar">
+
+            <!-- Window Controls -->
+            <div class="window-controls">
+                <span class="window-dot red"></span>
+                <span class="window-dot yellow"></span>
+                <span class="window-dot green"></span>
+            </div>
+
+            <!-- Game Title -->
+            <h1>Just One More Revision!</h1>
+
+        </div>
 
         <!-- Game Introduction -->
         <section id="intro">
-            <h2>Welcome to Your Worst Client Nightmare!</h2>
-            <p>You're a freelance graphic designer with one final logo project to finish. Unfortunately, your client Madison has a LOT of opinions. Make your choices carefully, manage your stress, and try to survive the workday without burning out!</p>
-            <button id="start">Start Game</button>
+
+            <!-- Inner Content Container -->
+            <div class="window-content">
+
+                <h2>Welcome to Your Worst Client Nightmare!</h2>
+                <p>
+                    You're a freelance graphic designer with one final logo
+                    project to finish. Unfortunately, your client Madison
+                    has a LOT of opinions.
+                </p>
+
+                <h3>How to Play</h3>
+                <p>
+                    Read Madison's emails and choose how to respond.
+                    Each decision can increase or decrease your stress level.
+                    Keep your stress below <strong>100</strong>, survive the
+                    workday, and see which ending you unlock!
+                </p>
+
+                <!-- Introduction Action Box -->
+                <div class="action-container">
+                    <p>Ready to face your most demanding client yet?</p>
+                    <button class="game-button"  id="start">Start Game</button>
+                </div>
+            
+            </div>
+
+
         </section>
 
         <!-- Current Scene -->
         <section id="game" hidden>
+            
+            <!-- Inner Email Container -->
+             <div class="window-content">
 
-            <p id="stress">Stress: 20/100</p>
+                <!-- Stress Meter -->
+                <div id="stress-meter">
+                    <span>Stress:</span>
 
-            <h2 id="scene-title"></h2>
-            <p id="scene-time"></p>
+                    <div id="stress-track">
+                        <div id="stress-fill"></div>
+                    </div>
 
-            <!-- Client Email -->
-            <p id="email"></p>
+                    <span id="stress">20/100</span>
+                </div>
 
-            <!-- Player Question -->
-            <p id="question"></p>
+                <h2 id="scene-title"></h2>
+                <p id="scene-time"></p>
 
-            <!-- Player Choices -->
-            <div id="choices"></div>
+                <!-- Client Email -->
+                <p id="email"></p>
+
+                <div class="action-container">
+
+                    <!-- Player Question -->
+                    <p id="question"></p>
+
+                    <!-- Player Choices -->
+                    <div id="choices"></div>
+
+                </div>
+
+            </div>
             
         </section>
 

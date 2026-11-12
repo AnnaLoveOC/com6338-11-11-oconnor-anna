@@ -1,0 +1,213 @@
+
+/* ========================================
+   COLOR VARIABLES
+======================================== */
+
+:root {
+    --page-background: #bdbfcb;
+    --email-window-background: #f8eeed;
+    --email-container-background: #fef9fa;
+    --email-heading-text: #3c1c1a;
+    --email-meta-text: #46464a;
+    --email-line-divider: #eee5e4;
+    --email-question-bg: #f8e2e2;
+    --email-button-border: #cbadab;
+    --email-stress-bar-fill: #dba8b1;
+    --window-titlebar-background: #efe8eb;
+    --window-titlebar-border: #afa3a8;
+}
+
+/* ========================================
+   GENERAL STYLING
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--page-background);
+    font-family: "Inter", sans-serif;
+}
+
+/* ========================================
+   MAIN GAME WINDOW
+======================================== */
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: var(--email-window-background);
+    border: 1px solid var(--window-titlebar-border);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+/* ========================================
+   MAC WINDOW TITLE BAR
+======================================== */
+
+#window-titlebar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 44px;
+    padding: 0 16px;
+    background-color: var(--window-titlebar-background);
+    border-bottom: 1px solid var(--window-titlebar-border);
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+}
+
+/* Mac Window Dots */
+
+.window-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: #ff5f57;
+}
+
+.yellow {
+    background-color: #febc2e;
+}
+
+.green {
+    background-color: #28c840;
+}
+
+/* Window Title */
+
+#window-titlebar h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+/* ========================================
+   INNER WINDOW CONTENT
+======================================== */
+
+#intro,
+#game,
+#ending {
+    padding: 32px;
+}
+
+.window-content {
+    background-color: var(--email-container-background);
+    padding: 32px;
+    border-radius: 12px;
+}
+
+/* ========================================
+   INTRODUCTION SCREEN
+======================================== */
+
+#intro h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+#intro h3 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+#intro p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+/* ========================================
+   ACTION CONTAINERS
+======================================== */
+
+.action-container {
+    background-color: var(--email-question-bg);
+    padding: 24px;
+    border-radius: 12px;
+}
+
+/* ========================================
+   ACTION CONTAINER TEXT
+======================================== */
+
+.action-container p {
+    margin: 0 0 16px;
+    color: var(--email-heading-text);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+/* ========================================
+   SHARED BUTTON STYLING
+======================================== */
+
+.game-button {
+    background-color: var(--email-container-background);
+    border: 1px solid var(--email-button-border);
+    border-radius: 8px;
+    padding: 12px 16px;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+
+    cursor: pointer;
+}
+
+.game-button:hover {
+    opacity: 0.85;
+}
+
+/* ========================================
+   GAME CHOICE BUTTONS
+======================================== */
+
+#choices {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#choices .game-button {
+    width: 100%;
+    min-height: 48px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+}
+
+/* ========================================
+   EMAIL SCENE TITLE
+======================================== */
+
+#scene-title {
+    margin: 0 0 8px;
+    color: var(--email-heading-text);
+    font-size: 24px;
+    line-height: 32px;
+}
