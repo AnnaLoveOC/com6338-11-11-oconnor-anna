@@ -38,6 +38,8 @@
                     has a LOT of opinions.
                 </p>
 
+                <hr class="email-divider">
+
                 <h3>How to Play</h3>
                 <p>
                     Read Madison's emails and choose how to respond.
@@ -74,8 +76,19 @@
                     <span id="stress">20/100</span>
                 </div>
 
+                <!-- Email Heading -->
                 <h2 id="scene-title"></h2>
-                <p id="scene-time"></p>
+
+                <!-- Email Metadata -->
+                <div class="email-meta">
+                    <p id="email-sender">
+                        <strong>From:</strong> Madison &lt;madison@auraandco.com&gt;
+                    </p>
+
+                    <p id="scene-time"></p>
+                </div>
+
+                <hr class="email-divider">
 
                 <!-- Client Email -->
                 <p id="email"></p>
@@ -96,12 +109,27 @@
 
         <!-- Game Ending -->
         <section id="ending" hidden>
-            <h2 id="ending-title"></h2>
-            <p id="ending-text"></p>
+
+            <!-- Inner Ending Content -->
+             <div class="window-content">
+
+                <!-- Completion Label -->
+                <p id="ending-label"></p>
+
+                <div class="action-container">
+
+                    <h2 id="ending-title"></h2>
+                    <p id="ending-text"></p>
+                
+                    <!-- Restart Button -->
+                    <button class="game-button" id="restart" hidden>Restart Game</button>
+                    
+                </div>
+            
+            </div>
+
         </section>
 
-        <!-- Restart Button -->
-        <button id="restart" hidden>Restart Game</button>
     </main>
 
     <script src="index.js"></script>

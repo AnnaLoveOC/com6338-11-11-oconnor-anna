@@ -13,8 +13,10 @@
     --email-question-bg: #f8e2e2;
     --email-button-border: #cbadab;
     --email-stress-bar-fill: #dba8b1;
+    --email-eyebrow-text: #9b6574;
     --window-titlebar-background: #efe8eb;
     --window-titlebar-border: #afa3a8;
+    
 }
 
 /* ========================================
@@ -124,12 +126,14 @@ main {
     font-size: 28px;
     font-weight: 700;
     line-height: 36px;
+    color: var(--email-heading-text)
 }
 
 #intro h3 {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
     line-height: 28px;
+    color: var(--email-heading-text)
 }
 
 #intro p {
@@ -158,6 +162,15 @@ main {
     font-size: 18px;
     font-weight: 600;
     line-height: 28px;
+}
+
+/* Intro Question */
+#intro .action-container p {
+    color: var(--email-heading-text);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0 0 16px;
 }
 
 /* ========================================
@@ -210,4 +223,130 @@ main {
     color: var(--email-heading-text);
     font-size: 24px;
     line-height: 32px;
+}
+
+/* ========================================
+   EMAIL DIVIDERS
+======================================== */
+
+.email-divider {
+    border: none;
+    border-top: 1px solid var(--email-line-divider);
+    margin: 24px 0;
+}
+
+/* ========================================
+   EMAIL METADATA
+======================================== */
+
+.email-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.email-meta p {
+    margin: 0;
+    color: var(--email-meta-text);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#email-sender {
+    font-weight: 400;
+}
+
+#email-sender strong {
+    font-weight: 600;
+}
+
+/* ========================================
+   STRESS METER
+======================================== */
+
+#stress-meter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+#stress-track {
+    width: 200px;
+    height: 10px;
+    background-color: #f0e5e7;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#stress-fill {
+    width: 20%;
+    height: 100%;
+    background-color: var(--email-stress-bar-fill);
+    border-radius: inherit;
+}
+
+/* ========================================
+   EMAIL BODY
+======================================== */
+
+#email {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    white-space: pre-line;
+}
+
+/* ========================================
+   GAME ACTION CONTAINER SPACING
+======================================== */
+
+#game .action-container {
+    margin-top: 24px;
+}
+
+/* ========================================
+   GAME ENDING
+======================================== */
+
+#ending-title {
+    margin: 0 0 16px;
+    color: var(--email-heading-text);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+#ending-text {
+    font-weight: 400;
+    line-height: 24px;
+}
+
+/* ========================================
+   ENDING LABEL
+======================================== */
+
+#ending-label {
+    margin: 0 0 12px;
+    color: var(--email-eyebrow-text);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   COMIC SANS CHAOS
+======================================== */
+
+.comic-sans-mode,
+.comic-sans-mode * {
+    font-family: "Comic Sans MS", "Comic Sans", cursive !important;
 }

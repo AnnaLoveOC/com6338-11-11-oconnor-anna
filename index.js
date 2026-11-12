@@ -269,6 +269,7 @@ const endings = {
     // ENDING A: Revision Purgatory
     revisionPurgatory: {
 
+        label: "REVISION REQUESTED",
         title: "Revision Purgatory",
         text: "You agree to one more revision. Then another. And another. Three weeks later, Madison is still emailing you about fonts, colors, and whether the logo should be bigger. You've officially entered Revision Purgatory. There is no escape.",
 
@@ -277,6 +278,7 @@ const endings = {
     // ENDING B: Professional Victory
     professionalVictory: {
 
+        label: "PROJECT COMPLETE",
         title: "Professional Victory",
         text: "You send Madison the final logo files and politely explain that any future changes will require a new contract. She agrees! You close your laptop, take a deep breath, and celebrate surviving the most exhausting design project of your career. Your professionalism has saved the day!",
 
@@ -285,6 +287,7 @@ const endings = {
     // ENDING C: Viral Disaster
     viralDisaster: {
 
+        label: "ACCIDENTAL SUCCESS",
         title: "Viral Disaster",
         text: "You send Madison the final logo, complete with questionable fonts, clashing colors, and enough chaos to make any graphic designer cry. Somehow, the design goes viral overnight. Millions of people are sharing it, and Aura & Co. becomes an internet sensation. Madison thinks you're a genius. You consider changing careers.",
 
@@ -293,6 +296,7 @@ const endings = {
     // ENDING D: The Great Escape
     greatEscape: {
 
+        label: "CONTRACT TERMINATED",
         title: "The Great Escape",
         text: "You've officially had enough. You politely inform Madison that you will no longer be working together. She immediately replies asking if you can make one tiny change before you go. You close your laptop, silence your notifications, and walk away. For the first time all day, you're finally free.",
 
@@ -301,6 +305,7 @@ const endings = {
     // BURNOUT ENDING: Burnout
     burnout: {
 
+        label: "CREATIVE BURNOUT",
         title: "Burnout",
         text: "Your stress meter hits 100. You stare at Madison's latest email, then slowly close your laptop. The fonts, the colors, the endless revisions... you can't take it anymore. You've officially burned out. The logo remains unfinished, but at least you never have to hear the words 'make it pop' again.",
 
@@ -325,7 +330,10 @@ function startGame() {
 
 // FUNCTION: Update the stress meter displayed on the webpage
 function updateStress() {
-    stressDisplay.textContent = `Stress: ${stress}/100`
+    stressDisplay.textContent = `${stress}/100`
+
+    // Update the stress bar width
+    document.querySelector("#stress-fill").style.width = `${stress}%`
 }
 
 // FUNCTION: Display the current scene and its available choices
@@ -394,11 +402,13 @@ function handleChoice(choiceIndex) {
     // Track whether the player chooses Comic Sans
     if (choice.nextScene === "comicSansBonus") {
         comicSans = true
+        document.body.classList.add("comic-sans-mode")
     }
 
     // Remove Comic Sans if the player reconsiders
     if (currentScene === "comicSansBonus" && choiceIndex === 1) {
         comicSans = false
+        document.body.classList.remove("comic-sans-mode")
     }
 
     // Track whether the player creates a chaotic logo
@@ -428,6 +438,10 @@ function showEnding(endingId) {
     endingTitle.textContent = ending.title
     endingText.textContent = ending.text
 
+    const endingLabel = document.querySelector("#ending-label")
+
+    endingLabel.textContent = ending.label
+
     endingSection.hidden = false
     gameSection.hidden = true
     restartButton.hidden = false
@@ -439,6 +453,7 @@ function restartGame() {
     stress = 20
     currentScene = "scene1"
     comicSans = false
+    document.body.classList.remove("comic-sans-mode")
     chaoticLogo = false
 
     introSection.hidden = true
